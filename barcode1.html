@@ -1,22 +1,267 @@
-<!doctype HTML>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    </head>
-    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
-    <script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    
-    <body style='margin : 0px; overflow: hidden;'>
-        <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
-        <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 4x4;'>
+<!DOCTYPE html>
+<html lang="en">
 
-        <a-marker type='barcode' value='145'>
-            <a-cylinder position='0 1 0' color="yellow"></a-cylinder>
-        </a-marker>
-    
-        <!-- use this <a-entity camera> to support multiple-markers, otherwise use <a-marker-camera> instead of </a-marker> -->
-        <a-entity camera></a-entity>
-        </a-scene>
-    </body>
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Vamsi | AR Portfolio</title>
+
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.4.5/aframe/build/aframe-ar.js"></script>
+
+  <style>
+
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    }
+
+    .ar-info {
+
+      position: fixed;
+
+      left: 50%;
+      bottom: 20px;
+
+      transform: translateX(-50%);
+
+      z-index: 10;
+
+      color: white;
+
+      background: rgba(0, 0, 0, 0.65);
+
+      padding: 10px 18px;
+
+      border-radius: 30px;
+
+      font-size: 13px;
+
+      text-align: center;
+
+      backdrop-filter: blur(10px);
+
+      pointer-events: none;
+
+      border: 1px solid rgba(255,255,255,0.15);
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <div class="ar-info">
+    Scan the marker to explore Vamsi's AR portfolio
+  </div>
+
+
+  <a-scene
+
+    embedded
+
+    vr-mode-ui="enabled: false"
+
+    renderer="logarithmicDepthBuffer: true;"
+
+    arjs="
+      sourceType: webcam;
+      debugUIEnabled: false;
+      detectionMode: mono_and_matrix;
+      matrixCodeType: 4x4;
+    "
+  >
+
+
+    <!-- ===================================
+         BARCODE MARKER
+    ==================================== -->
+
+    <a-marker
+      type="barcode"
+      value="145"
+    >
+
+
+      <!-- Rotating central object -->
+
+      <a-torus-knot
+
+        position="0 1.3 0"
+
+        radius="0.55"
+
+        radius-tubular="0.13"
+
+        color="#64b5ff"
+
+        animation="
+          property: rotation;
+          to: 360 360 360;
+          loop: true;
+          dur: 8000;
+          easing: linear;
+        "
+
+      >
+      </a-torus-knot>
+
+
+      <!-- Main title -->
+
+      <a-text
+
+        value="VAMSI"
+
+        position="0 2.25 0"
+
+        align="center"
+
+        color="#ffffff"
+
+        width="4"
+
+        font="https://cdn.aframe.io/fonts/Exo2Bold.fnt"
+
+      >
+      </a-text>
+
+
+      <!-- Subtitle -->
+
+      <a-text
+
+        value="AI & Data Engineering"
+
+        position="0 1.95 0"
+
+        align="center"
+
+        color="#64b5ff"
+
+        width="3.2"
+
+      >
+      </a-text>
+
+
+      <!-- Information -->
+
+      <a-text
+
+        value="IIT Jodhpur | Final Year"
+
+        position="0 0.55 0"
+
+        align="center"
+
+        color="#ffffff"
+
+        width="3"
+
+      >
+      </a-text>
+
+
+      <!-- Floating spheres -->
+
+      <a-sphere
+
+        position="-1 1.4 0"
+
+        radius="0.12"
+
+        color="#5eead4"
+
+        animation="
+          property: position;
+          dir: alternate;
+          dur: 1500;
+          loop: true;
+          to: -1 1.8 0;
+        "
+
+      >
+      </a-sphere>
+
+
+      <a-sphere
+
+        position="1 1.6 0"
+
+        radius="0.12"
+
+        color="#64b5ff"
+
+        animation="
+          property: position;
+          dir: alternate;
+          dur: 1800;
+          loop: true;
+          to: 1 2 0;
+        "
+
+      >
+      </a-sphere>
+
+
+      <!-- Ground ring -->
+
+      <a-ring
+
+        position="0 0.05 0"
+
+        rotation="-90 0 0"
+
+        radius-inner="0.8"
+
+        radius-outer="1.1"
+
+        color="#64b5ff"
+
+        material="
+          shader: flat;
+          opacity: 0.7;
+        "
+
+        animation="
+          property: rotation;
+          to: -90 360 0;
+          loop: true;
+          dur: 6000;
+          easing: linear;
+        "
+
+      >
+      </a-ring>
+
+
+    </a-marker>
+
+
+    <!-- ===================================
+         CAMERA
+    ==================================== -->
+
+    <a-entity camera></a-entity>
+
+
+  </a-scene>
+
+</body>
+
 </html>
