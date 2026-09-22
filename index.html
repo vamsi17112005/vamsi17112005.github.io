@@ -2,196 +2,1429 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vamsi Krishna Reddy - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Vamsi Krishna Reddy | AI & Data Engineering</title>
+
+  <meta
+    name="description"
+    content="Portfolio of Vamsi Krishna Reddy, final-year B.Tech student in Artificial Intelligence and Data Engineering at IIT Jodhpur."
+  />
+
+  <meta
+    name="keywords"
+    content="Vamsi Krishna Reddy, IIT Jodhpur, AI, Data Engineering, Machine Learning, RAG, Python, C++, Software Engineering"
+  />
+
+  <meta name="author" content="Vamsi Krishna Reddy" />
+
   <style>
+
+    /* ================================
+       GLOBAL
+    ================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --bg: #080b12;
+      --bg-light: #0d111b;
+      --card: #111722;
+      --card-hover: #151d2b;
+      --text: #f4f7fb;
+      --muted: #9ba7b8;
+      --primary: #64b5ff;
+      --primary-dark: #3186d8;
+      --border: rgba(255, 255, 255, 0.08);
+      --success: #5eead4;
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background-color: #007acc;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    section {
-      margin-bottom: 60px;
-    }
-    h2 {
-      border-bottom: 2px solid #007acc;
-      padding-bottom: 8px;
-      margin-bottom: 20px;
-      color: #007acc;
-    }
-    .about p {
-      font-size: 1.1rem;
+      font-family:
+        Inter,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      background:
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(49, 134, 216, 0.12),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 85% 10%,
+          rgba(94, 234, 212, 0.08),
+          transparent 25%
+        ),
+        var(--bg);
+
+      color: var(--text);
       line-height: 1.6;
     }
-    .projects {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    .project {
-      background: white;
-      padding: 15px;
-      box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
-      border-radius: 5px;
-      transition: transform 0.2s ease;
-    }
-    .project:hover {
-      transform: translateY(-5px);
-    }
-    .project h3 {
-      margin-top: 0;
-      color: #004a99;
-    }
-    .project p {
-      font-size: 0.95rem;
-      margin-bottom: 10px;
-    }
-    .project a {
-      color: #007acc;
+
+    a {
+      color: inherit;
       text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+
+    /* ================================
+       NAVBAR
+    ================================= */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background: rgba(8, 11, 18, 0.85);
+      backdrop-filter: blur(15px);
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      height: 70px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+
+    /* ================================
+       HERO
+    ================================= */
+
+    .hero {
+      min-height: 90vh;
+
+      display: flex;
+      align-items: center;
+
+      padding: 80px 0;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 5.8rem);
+      line-height: 1.05;
+      letter-spacing: -3px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero-subtitle {
+      color: var(--muted);
+      font-size: 1.25rem;
+      max-width: 720px;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      transition: 0.25s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #06101b;
+    }
+
+    .btn-primary:hover {
+      background: #8acbff;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: transparent;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+
+    /* ================================
+       SECTION
+    ================================= */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-header {
+      margin-bottom: 45px;
+    }
+
+    .section-label {
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 2.4rem;
+      letter-spacing: -1px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      max-width: 700px;
+      margin-top: 10px;
+    }
+
+
+    /* ================================
+       ABOUT
+    ================================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 50px;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+    }
+
+    .interest-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .interest-list li {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 14px 18px;
+      border-radius: 8px;
+      color: var(--text);
+    }
+
+    .interest-list li::before {
+      content: "→";
+      color: var(--primary);
+      margin-right: 10px;
       font-weight: bold;
     }
-    .project a:hover {
-      text-decoration: underline;
+
+
+    /* ================================
+       EXPERIENCE
+    ================================= */
+
+    .timeline {
+      position: relative;
+      border-left: 1px solid rgba(100, 181, 255, 0.3);
+      margin-left: 10px;
     }
-    .skills ul {
-      list-style: none;
-      padding-left: 0;
+
+    .timeline-item {
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 38px;
+    }
+
+    .timeline-item::before {
+      content: "";
+
+      position: absolute;
+      left: -6px;
+      top: 5px;
+
+      width: 11px;
+      height: 11px;
+
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 15px rgba(100, 181, 255, 0.5);
+    }
+
+    .timeline-item h3 {
+      font-size: 1.25rem;
+      margin-bottom: 4px;
+    }
+
+    .timeline-role {
+      color: var(--primary);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      max-width: 800px;
+    }
+
+
+    /* ================================
+       PROJECTS
+    ================================= */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+
+      padding: 28px;
+      border-radius: 12px;
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-7px);
+      background: var(--card-hover);
+      border-color: rgba(100, 181, 255, 0.35);
+    }
+
+    .project-number {
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .project-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+
+    .project-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 7px;
+      margin-bottom: 20px;
     }
-    .skills li {
-      background: #007acc;
-      color: white;
-      padding: 8px 15px;
-      border-radius: 20px;
-      font-weight: 600;
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 5px 9px;
+      border-radius: 5px;
+
+      background: rgba(100, 181, 255, 0.09);
+      color: #9fd4ff;
+
+      border: 1px solid rgba(100, 181, 255, 0.15);
     }
-    .contact p {
-      font-size: 1rem;
-    }
-    footer {
-      background: #222;
-      color: #ccc;
-      text-align: center;
-      padding: 15px 0;
-      margin-top: 60px;
+
+    .project-link {
+      color: var(--primary);
+      font-weight: 700;
       font-size: 0.9rem;
     }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+
+    /* ================================
+       SKILLS
+    ================================= */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .skill-group {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 22px;
+      border-radius: 10px;
+    }
+
+    .skill-group h3 {
+      color: var(--primary);
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+
+    .skill-group p {
+      color: var(--muted);
+    }
+
+
+    /* ================================
+       EDUCATION
+    ================================= */
+
+    .education-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+
+      border-radius: 12px;
+      padding: 28px;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .education-card h3 {
+      margin-bottom: 5px;
+    }
+
+    .education-card p {
+      color: var(--muted);
+    }
+
+    .education-year {
+      color: var(--primary);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+
+    /* ================================
+       ACHIEVEMENTS
+    ================================= */
+
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .achievement {
+      background: var(--card);
+      border: 1px solid var(--border);
+
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .achievement h3 {
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .achievement p {
+      color: var(--muted);
+    }
+
+
+    /* ================================
+       CONTACT
+    ================================= */
+
+    .contact-box {
+      background:
+        linear-gradient(
+          135deg,
+          rgba(100, 181, 255, 0.12),
+          rgba(94, 234, 212, 0.04)
+        );
+
+      border: 1px solid var(--border);
+      border-radius: 14px;
+
+      padding: 45px;
+      text-align: center;
+    }
+
+    .contact-box h2 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto 25px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+
+    /* ================================
+       FOOTER
+    ================================= */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 25px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+
+    /* ================================
+       RESPONSIVE
+    ================================= */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 80vh;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .about-grid,
+      .projects-grid,
+      .skills-grid,
+      .achievement-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .education-card {
+        flex-direction: column;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .contact-box {
+        padding: 30px 20px;
+      }
+    }
+
   </style>
 </head>
+
+
 <body>
 
-<header>
-  <h1>Vamsi Krishna Reddy</h1>
-  <nav>
-    <a href="#about">About Me</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-  </nav>
+
+<!-- ================================
+     NAVIGATION
+================================= -->
+
+<nav>
+
+  <div class="container nav-container">
+
+    <a href="#" class="logo">
+      Vamsi<span>.</span>
+    </a>
+
+    <div class="nav-links">
+
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+
+    </div>
+
+  </div>
+
+</nav>
+
+
+<!-- ================================
+     HERO
+================================= -->
+
+<header class="hero">
+
+  <div class="container">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        AI & Data Engineering
+      </div>
+
+      <h1>
+        Hi, I'm <span>Vamsi Krishna Reddy.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Final-year B.Tech student in Artificial Intelligence and
+        Data Engineering at IIT Jodhpur, interested in Machine
+        Learning, AI systems, data-driven applications, and
+        software engineering.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a
+          href="#projects"
+          class="btn btn-primary"
+        >
+          View My Work
+        </a>
+
+        <a
+          href="https://github.com/vamsi17112005"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-secondary"
+        >
+          GitHub
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/vamsikrishna-reddy-4b25b4314/"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-secondary"
+        >
+          LinkedIn
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </header>
 
+
 <main>
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>Hi, I’m <strong>Vamsi Krishna Reddy</strong> — a <em>creative and analytical thinker</em> and AI &amp; Data Engineering student at IIT Jodhpur,completed my 2 nd Year. I am more passionate about solving real-world problems through code, logic, and experimentation.</p>
-    <p>I’ve worked on diverse projects ranging from signal analysis tools in C++ to web-integrated systems using Flask and HTML. These experiences helped me build a solid foundation in both low-level systems programming and full-stack development, enabling me to bridge the gap between theory and application.</p>
-    <p>I’m especially interested in:</p>
-    <ul style="font-size:1.1rem; line-height:1.6; margin-left:1.2rem;">
-      <li>Machine Learning </li>
-     <li>Systems Programming (C/C++)</li>
-      <li>Backend &amp; Frentend Development</li>
-      <li>Hardware-aware Optimizations</li>
-    </ul>
-    <p>I enjoy exploring how different technologies work together and constantly seek out opportunities to grow. Whether it’s debugging complex logic or designing clean interfaces, I strive to build solutions that are both robust and elegant.</p>
-    <p><strong>Let’s connect!</strong> I’m open to collaborations, internships, or any opportunity where I can learn and contribute meaningfully.</p>
 
-  </section>
 
-  <section id="projects" class="projects-section">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="project">
-        <h3>DNA Gene Comparison System</h3>
-        <p>A hybrid application combining a FastAPI Python backend with C++ core logic to perform efficient DNA sequence comparisons using suffix trees. The system features a user-friendly frontend for DNA record management, secure information retrieval, organ donation registration, and high-accuracy genetic similarity analysis. Data is managed via text files, and the project highlights the performance advantage of suffix tree algorithms for large DNA inputs.</p>
-        <a href="https://github.com/nehasai0411/DNA_Comparison" target="_blank" rel="noopener">View on GitHub</a>
+<!-- ================================
+     ABOUT
+================================= -->
+
+<section id="about">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="section-label">
+        About Me
       </div>
-      <div class="project">
-        <h3>Object Recognition using CIFAR-10</h3>
-        <p>Collaboratively developed and compared multiple machine learning and deep learning models—including CNN, SVM, MLP, and ensemble methods—for image classification on the CIFAR-10 dataset. The project highlights model performance differences, with a CNN achieving the highest accuracy (77.44%) by effectively capturing spatial features. Dimensionality reduction with PCA was applied to classical models to improve efficiency.
 
-</p>
-           <p><strong>Project Page:</strong> <a href="https://saisriy.github.io/object_recognition_website/" target="_blank" rel="noopener">cifar10 project url link</a></p>
-        
-      </div>
-      <div class="project">
+      <h2 class="section-title">
+        Building with data, AI and code.
+      </h2>
 
-  <div class="project">
-    <h3>Signal Frequency Analysis Web Application</h3>
-    <p>Developed a web application for advanced frequency analysis of uploaded signal data using MEMO-ESPRIT and FFT algorithms. The app processes CSV signal inputs, performs spectral analysis, and visualizes results with interactive plots.</p>
-    <h4>Team Contribution</h4>
-    <p>Our team designed and implemented the frontend interface and integrated it with the backend processing code provided by the professor. We ensured smooth data flow, user-friendly file upload, parameter input, and dynamic display of analysis plots, making minimal changes to the backend for seamless integration.</p>
- <p><strong>Project link:</strong> <a href="https://dc-project-4.onrender.com" target="_blank" rel="noopener">Power system Analysis url link</a></p>
-  </div>
     </div>
-  </section>
 
-  <section id="skills" class="skills">
-    <h2>Skills</h2>
-    <ul>
-       <li>Machine Learning</li>
-       <li>Git</li>
-       <li>C,C++</li>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-      <li>Python</li>
-      <li>Data Structures and Algorithm</li>
-      
-     
-    </ul>
-  </section>
 
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:b23cm1045@iitj.ac.in">b23cm1045@iitj.ac.in</a></p>
-    <p>GitHub: <a href="https://github.com/vamsi17112005" target="_blank" rel="noopener">github.com/vamsi17112005</a></p>
-  </section>
+    <div class="about-grid">
+
+      <div class="about-text">
+
+        <p>
+          I'm <strong>Vamsi Krishna Reddy</strong>, a final-year
+          B.Tech student in Artificial Intelligence and Data
+          Engineering at the
+          <strong>Indian Institute of Technology, Jodhpur.</strong>
+        </p>
+
+        <p>
+          My interests lie at the intersection of machine
+          learning, data engineering, artificial intelligence,
+          and software development. I enjoy turning technical
+          concepts into working systems and exploring how
+          different technologies can work together to solve
+          real-world problems.
+        </p>
+
+        <p>
+          My recent work includes document intelligence,
+          semantic embeddings, vector search, Retrieval-Augmented
+          Generation (RAG), machine learning applications,
+          and MLOps-oriented systems.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <ul class="interest-list">
+
+          <li>Machine Learning & AI</li>
+
+          <li>Data Engineering</li>
+
+          <li>RAG & LLM Applications</li>
+
+          <li>Backend Development</li>
+
+          <li>Data Structures & Algorithms</li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ================================
+     EXPERIENCE
+================================= -->
+
+<section id="experience">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="section-label">
+        Experience
+      </div>
+
+      <h2 class="section-title">
+        Where I've worked
+      </h2>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+      <div class="timeline-item">
+
+        <h3>
+          Bharat Electronics Limited (BEL), Bengaluru
+        </h3>
+
+        <div class="timeline-role">
+          Software Engineering Intern
+        </div>
+
+        <p>
+          Contributed to software engineering projects in a
+          professional development environment, collaborating
+          with the project team on assigned technical tasks.
+        </p>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <h3>
+          United Tech Labs
+        </h3>
+
+        <div class="timeline-role">
+          Software Engineering Intern
+        </div>
+
+        <p>
+          Developed components of an enterprise AI search
+          platform involving document processing, semantic
+          embeddings, vector search, and
+          Retrieval-Augmented Generation (RAG).
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ================================
+     PROJECTS
+================================= -->
+
+<section id="projects">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="section-label">
+        Selected Work
+      </div>
+
+      <h2 class="section-title">
+        Projects
+      </h2>
+
+      <p class="section-description">
+        A selection of projects covering AI, machine learning,
+        data processing, algorithms, and software engineering.
+      </p>
+
+    </div>
+
+
+    <div class="projects-grid">
+
+
+      <!-- PROJECT 1 -->
+
+      <article class="project-card">
+
+        <div class="project-number">
+          PROJECT 01
+        </div>
+
+        <h3>
+          Enterprise AI Search Platform
+        </h3>
+
+        <p>
+          Developed an end-to-end document intelligence pipeline
+          for transforming unstructured documents into structured,
+          semantically searchable representations for
+          RAG-based retrieval. Built context-aware document
+          chunking while preserving document hierarchy, reading
+          order, tables, images, and metadata.
+        </p>
+
+        <div class="project-tags">
+
+          <span class="tag">Python</span>
+          <span class="tag">RAG</span>
+          <span class="tag">BGE Embeddings</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">pgvector</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Docling</span>
+
+        </div>
+
+        <a
+          href="https://github.com/unitedtechlab/ai-search-backend"
+          target="_blank"
+          rel="noopener"
+          class="project-link"
+        >
+          View on GitHub →
+        </a>
+
+      </article>
+
+
+
+      <!-- PROJECT 2 -->
+
+      <article class="project-card">
+
+        <div class="project-number">
+          PROJECT 02
+        </div>
+
+        <h3>
+          RAG and MLOps Integration
+        </h3>
+
+        <p>
+          Developed a RAG-based chatbot integrating document
+          retrieval with LLM-based generation for context-aware
+          responses. Containerized the application using Docker
+          and implemented monitoring using Prometheus and Grafana.
+        </p>
+
+        <div class="project-tags">
+
+          <span class="tag">RAG</span>
+          <span class="tag">LLMs</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Prometheus</span>
+          <span class="tag">Grafana</span>
+          <span class="tag">Vector DB</span>
+
+        </div>
+
+        <a
+          href="https://github.com/Pragna1005/CyberThreatIntelligence-CTI-"
+          target="_blank"
+          rel="noopener"
+          class="project-link"
+        >
+          View on GitHub →
+        </a>
+
+      </article>
+
+
+
+      <!-- PROJECT 3 -->
+
+      <article class="project-card">
+
+        <div class="project-number">
+          PROJECT 03
+        </div>
+
+        <h3>
+          Decoding Similarities: DNA Comparison
+        </h3>
+
+        <p>
+          Developed a computational system for comparing DNA
+          sequences and identifying common patterns across
+          1000+ base sequences. Implemented trie-based navigation
+          and optimized pattern matching, achieving approximately
+          30% faster comparison than brute-force approaches.
+        </p>
+
+        <div class="project-tags">
+
+          <span class="tag">Python</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">C++</span>
+          <span class="tag">Algorithms</span>
+          <span class="tag">Pattern Matching</span>
+
+        </div>
+
+        <a
+          href="https://github.com/vamsi17112005/DNA_Compare_New"
+          target="_blank"
+          rel="noopener"
+          class="project-link"
+        >
+          View on GitHub →
+        </a>
+
+      </article>
+
+
+
+      <!-- PROJECT 4 -->
+
+      <article class="project-card">
+
+        <div class="project-number">
+          PROJECT 04
+        </div>
+
+        <h3>
+          Object Recognition using CIFAR-10
+        </h3>
+
+        <p>
+          Collaboratively developed and compared machine learning
+          and deep learning models including CNN, SVM, MLP, and
+          ensemble methods for image classification on the
+          CIFAR-10 dataset. PCA was applied to classical models
+          for dimensionality reduction and efficiency.
+        </p>
+
+        <div class="project-tags">
+
+          <span class="tag">Machine Learning</span>
+          <span class="tag">Deep Learning</span>
+          <span class="tag">CNN</span>
+          <span class="tag">SVM</span>
+          <span class="tag">MLP</span>
+          <span class="tag">PCA</span>
+
+        </div>
+
+        <a
+          href="https://saisriy.github.io/object_recognition_website/"
+          target="_blank"
+          rel="noopener"
+          class="project-link"
+        >
+          View Project →
+        </a>
+
+      </article>
+
+
+
+      <!-- PROJECT 5 -->
+
+      <article class="project-card">
+
+        <div class="project-number">
+          PROJECT 05
+        </div>
+
+        <h3>
+          Signal Frequency Analysis Web Application
+        </h3>
+
+        <p>
+          Developed a web application for frequency analysis of
+          uploaded signal data using MEMO-ESPRIT and FFT algorithms.
+          The application processes CSV signal inputs, performs
+          spectral analysis, and visualizes results using
+          interactive plots.
+        </p>
+
+        <div class="project-tags">
+
+          <span class="tag">Python</span>
+          <span class="tag">C++</span>
+          <span class="tag">FFT</span>
+          <span class="tag">MEMO-ESPRIT</span>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+
+        </div>
+
+        <a
+          href="https://dc-project-4.onrender.com"
+          target="_blank"
+          rel="noopener"
+          class="project-link"
+        >
+          View Project →
+        </a>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ================================
+     SKILLS
+================================= -->
+
+<section id="skills">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="section-label">
+        Technical Skills
+      </div>
+
+      <h2 class="section-title">
+        Technologies I work with
+      </h2>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+
+      <div class="skill-group">
+
+        <h3>
+          Programming
+        </h3>
+
+        <p>
+          Python · C++ · C · SQL
+        </p>
+
+      </div>
+
+
+      <div class="skill-group">
+
+        <h3>
+          Machine Learning & AI
+        </h3>
+
+        <p>
+          Machine Learning · Deep Learning · RAG · LLMs ·
+          TensorFlow · Scikit-learn · NumPy
+        </p>
+
+      </div>
+
+
+      <div class="skill-group">
+
+        <h3>
+          Data & Databases
+        </h3>
+
+        <p>
+          PostgreSQL · pgvector
+        </p>
+
+      </div>
+
+
+      <div class="skill-group">
+
+        <h3>
+          Backend
+        </h3>
+
+        <p>
+          FastAPI · Flask · REST APIs · SQLAlchemy
+        </p>
+
+      </div>
+
+
+      <div class="skill-group">
+
+        <h3>
+          MLOps & Monitoring
+        </h3>
+
+        <p>
+          Docker · Prometheus · Grafana
+        </p>
+
+      </div>
+
+
+      <div class="skill-group">
+
+        <h3>
+          Core Computer Science
+        </h3>
+
+        <p>
+          Data Structures & Algorithms · OOP · Operating Systems ·
+          Computer Networks · DBMS
+        </p>
+
+      </div>
+
+
+      <div class="skill-group">
+
+        <h3>
+          Development Tools
+        </h3>
+
+        <p>
+          Git · GitHub · VS Code
+        </p>
+
+      </div>
+
+
+      <div class="skill-group">
+
+        <h3>
+          Web Technologies
+        </h3>
+
+        <p>
+          HTML · CSS · JavaScript
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ================================
+     EDUCATION
+================================= -->
+
+<section id="education">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="section-label">
+        Education
+      </div>
+
+      <h2 class="section-title">
+        Academic Background
+      </h2>
+
+    </div>
+
+
+    <div class="education-card">
+
+      <div>
+
+        <h3>
+          Indian Institute of Technology, Jodhpur
+        </h3>
+
+        <p>
+          B.Tech in Artificial Intelligence and Data Engineering
+        </p>
+
+        <p>
+          CGPA: 7.21
+        </p>
+
+      </div>
+
+      <div class="education-year">
+        2023 — 2027
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ================================
+     ACHIEVEMENTS
+================================= -->
+
+<section id="achievements">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="section-label">
+        Achievements
+      </div>
+
+      <h2 class="section-title">
+        Milestones
+      </h2>
+
+    </div>
+
+
+    <div class="achievement-grid">
+
+
+      <div class="achievement">
+
+        <h3>
+          300+ DSA Problems
+        </h3>
+
+        <p>
+          Solved 300+ Data Structures and Algorithms problems
+          on platforms including LeetCode and Codeforces.
+        </p>
+
+      </div>
+
+
+      <div class="achievement">
+
+        <h3>
+          JEE Advanced
+        </h3>
+
+        <p>
+          Secured All India Rank 4709 in JEE Advanced.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ================================
+     CONTACT
+================================= -->
+
+<section id="contact">
+
+  <div class="container">
+
+    <div class="contact-box">
+
+      <h2>
+        Let's connect.
+      </h2>
+
+      <p>
+        I'm interested in opportunities involving software
+        engineering, machine learning, artificial intelligence,
+        and data-driven systems.
+      </p>
+
+
+      <div class="contact-links">
+
+        <a
+          href="mailto:krish17112005@gmail.com"
+          class="btn btn-primary"
+        >
+          Email Me
+        </a>
+
+        <a
+          href="https://github.com/vamsi17112005"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-secondary"
+        >
+          GitHub
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/vamsikrishna-reddy-4b25b4314/"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-secondary"
+        >
+          LinkedIn
+        </a>
+
+        <a
+          href="https://vamsi17112005.github.io"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-secondary"
+        >
+          Portfolio
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
 </main>
 
+
+<!-- ================================
+     FOOTER
+================================= -->
+
 <footer>
-  &copy; 2025 Vamsi Krishna Reddy. All rights reserved.
+
+  <div class="container">
+
+    © 2026 Vamsi Krishna Reddy · IIT Jodhpur
+
+  </div>
+
 </footer>
+
 
 </body>
 </html>
