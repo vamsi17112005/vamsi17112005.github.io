@@ -590,8 +590,70 @@
         padding: 30px 20px;
       }
     }
+/* ================================
+   PROFILE PHOTO
+================================ */
 
+.hero-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.hero-photo-container {
+  flex-shrink: 0;
+}
+
+.hero-photo {
+  width: 280px;
+  height: 280px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 3px solid rgba(100, 181, 255, 0.6);
+
+  box-shadow:
+    0 0 0 10px rgba(100, 181, 255, 0.05),
+    0 0 50px rgba(100, 181, 255, 0.18);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hero-photo:hover {
+  transform: scale(1.03);
+
+  box-shadow:
+    0 0 0 12px rgba(100, 181, 255, 0.07),
+    0 0 65px rgba(100, 181, 255, 0.25);
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+  .hero-layout {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-photo {
+    width: 210px;
+    height: 210px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+}
   </style>
+  
 </head>
 
 
@@ -634,59 +696,78 @@
 
   <div class="container">
 
-    <div class="hero-content">
+    <div class="hero-layout">
 
-      <div class="eyebrow">
-        AI & Data Engineering
+
+      <!-- LEFT SIDE -->
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          AI & Data Engineering
+        </div>
+
+        <h1>
+          Hi, I'm <span>Vamsi Krishna Reddy.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Final-year B.Tech student in Artificial Intelligence
+          and Data Engineering at IIT Jodhpur, interested in
+          Machine Learning, AI systems, data-driven applications,
+          and software engineering.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a
+            href="#projects"
+            class="btn btn-primary"
+          >
+            View My Work
+          </a>
+
+          <a
+            href="https://github.com/vamsi17112005"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-secondary"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/vamsikrishna-reddy-4b25b4314/"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-secondary"
+          >
+            LinkedIn
+          </a>
+
+        </div>
+
       </div>
 
-      <h1>
-        Hi, I'm <span>Vamsi Krishna Reddy.</span>
-      </h1>
 
-      <p class="hero-subtitle">
-        Final-year B.Tech student in Artificial Intelligence and
-        Data Engineering at IIT Jodhpur, interested in Machine
-        Learning, AI systems, data-driven applications, and
-        software engineering.
-      </p>
+      <!-- RIGHT SIDE - PROFILE PHOTO -->
 
-      <div class="hero-buttons">
+      <div class="hero-photo-container">
 
-        <a
-          href="#projects"
-          class="btn btn-primary"
+        <img
+          src="images/profile.jpg"
+          alt="Vamsi Krishna Reddy"
+          class="hero-photo"
         >
-          View My Work
-        </a>
-
-        <a
-          href="https://github.com/vamsi17112005"
-          target="_blank"
-          rel="noopener"
-          class="btn btn-secondary"
-        >
-          GitHub
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/vamsikrishna-reddy-4b25b4314/"
-          target="_blank"
-          rel="noopener"
-          class="btn btn-secondary"
-        >
-          LinkedIn
-        </a>
 
       </div>
+
 
     </div>
 
   </div>
 
 </header>
-
-
 <main>
 
 
